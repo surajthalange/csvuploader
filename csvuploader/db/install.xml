@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/csvuploader/db" VERSION="2022013100" COMMENT="Tables for the Your Plugin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+    <TABLES>
+        <!-- Add the user_email table -->
+        <TABLE NAME="user_email" COMMENT="Your Table">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" AUTOINCREMENT="true" COMMENT="Primary key"/>
+                <FIELD NAME="username" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Username"/>
+                <FIELD NAME="email" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Email"/>
+                <FIELD NAME="datesent" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="Date when the email was sent"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+        </TABLE>
+
+        <!-- Add the csv_data table -->
+        <TABLE NAME="csv_data" COMMENT="CSV Data Table">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" AUTOINCREMENT="true" COMMENT="Primary key"/>
+                <FIELD NAME="username" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Username"/>
+                <FIELD NAME="email" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Email"/>
+                <FIELD NAME="firstname" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="First name"/>
+                <FIELD NAME="lastname" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Last name"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+        </TABLE>
+
+        <!-- Add the sent_emails table -->
+        <TABLE NAME="sent_emails" COMMENT="Sent Emails Table">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" AUTOINCREMENT="true" COMMENT="Primary key"/>
+                <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="User ID"/>
+                <FIELD NAME="datesent" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="Date when the email was sent"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>
